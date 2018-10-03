@@ -2,7 +2,7 @@
 To be announced
 
 ____________________
-# Developers:       |           
-Robin Svensson      |
-Arasto Sahbaei      |
+# Developers:                 
+Robin Svensson      
+Arasto Sahbaei      
 ____________________
