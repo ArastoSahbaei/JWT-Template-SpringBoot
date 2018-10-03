@@ -2,6 +2,6 @@
 To be announced
 
 ____________________
-# Developers:                 
+# Developers                 
 Robin Svensson      
 Arasto Sahbaei      
