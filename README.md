@@ -5,4 +5,3 @@ ____________________
 # Developers:                 
 Robin Svensson      
 Arasto Sahbaei      
-____________________
