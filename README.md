@@ -1,9 +1,9 @@
-# uLearn
+# <u>Learn
 To be announced
 
 ____________________
 # Developers                 
 Robin Svensson      
 Arasto Sahbaei 
-Björn
-Gurra
+Björn Kristensson Alfsson
+Gustaf Alhäll
