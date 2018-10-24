@@ -1,11 +1,11 @@
-package se.robasto.Controller;
+package se.robasto.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import se.robasto.Model.UserModel;
-import se.robasto.Service.UserService;
+import se.robasto.model.UserModel;
+import se.robasto.service.UserService;
 
 import java.util.List;
 
@@ -42,6 +42,11 @@ public class userController {
     @GetMapping("/user/{username}")
     public ResponseEntity<UserModel> getUserByUsername(@PathVariable String username) {
         return new ResponseEntity(userService.FindUserByUserName(username), HttpStatus.OK);
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello World";
     }
 
 }

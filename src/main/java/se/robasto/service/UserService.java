@@ -1,16 +1,20 @@
-package se.robasto.Service;
+package se.robasto.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import se.robasto.Entity.User;
-import se.robasto.Model.UserModel;
-import se.robasto.Repository.UserRepository;
+import se.robasto.entity.User;
+import se.robasto.model.UserModel;
+import se.robasto.repository.UserRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class UserService implements UserServiceInterface {
+public class UserService implements UserServiceInterface, UserDetailsService {
 
     @Autowired
     private final UserRepository userRepository;
@@ -44,6 +48,23 @@ public class UserService implements UserServiceInterface {
             userModelList.add(new UserModel(user));
         }
         return userModelList;
+    }
+
+    //laddar ifrån user nu, men ska egentligen hämta ifrån model(?)
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = FindUserByUserName(username);
+
+        org.springframework.security.core.userdetails.User.UserBuilder builder = null;
+        if (user != null) {
+            builder = org.springframework.security.core.userdetails.User.withUsername(username);
+            builder.password(new BCryptPasswordEncoder().encode(user.getPassword()));
+            builder.roles(user.getRole());
+        } else {
+            throw new UsernameNotFoundException("User not found.");
+        }
+
+        return builder.build();
     }
 
 }

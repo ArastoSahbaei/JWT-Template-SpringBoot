@@ -1,7 +1,7 @@
-package se.robasto.Service;
+package se.robasto.service;
 
-import se.robasto.Entity.User;
-import se.robasto.Model.UserModel;
+import se.robasto.entity.User;
+import se.robasto.model.UserModel;
 
 import java.util.List;
 

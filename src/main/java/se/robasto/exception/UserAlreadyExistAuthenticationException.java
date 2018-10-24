@@ -1,4 +1,4 @@
-package se.robasto.Exception;
+package se.robasto.exception;
 
 import javax.naming.AuthenticationException;
 

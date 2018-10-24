@@ -1,6 +1,6 @@
-package se.robasto.Model;
+package se.robasto.model;
 
-import se.robasto.Entity.User;
+import se.robasto.entity.User;
 
 import java.io.Serializable;
 
